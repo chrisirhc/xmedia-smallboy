@@ -6,8 +6,14 @@ int neck_bendSensor   = 255;
 int head_accSensor_x  = 255;
 int head_accSensor_y  = 255;
 
+Serial serialPort;
+
 void setup()
 {
+  println(Serial.list());
+  serialPort = new Serial(this, Serial.list()[0], 9600);
+  serialPort.bufferUntil('\n');
+
   size(400, 400);
   translate(20, 40);
   strokeWeight(4);
@@ -40,4 +46,15 @@ void draw()
   line(50, 50, 65, 70);
 }
 
-
+void serialEvent(Serial myPort)
+{
+  String inString = myPort.readStringUntil('\n');
+  int[] vals = int(split(inString, ","));
+  if (vals.length >= 5) {
+    candy_forceSensor = vals[0];
+    elbow_bendSensor  = vals[1];
+    neck_bendSensor   = vals[2];
+    head_accSensor_x  = vals[3];
+    head_accSensor_y  = vals[4];
+  }
+}
