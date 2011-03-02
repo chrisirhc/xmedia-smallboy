@@ -14,16 +14,16 @@ void setup()
   // Print for debugging purposes
   println(Serial.list());
   // Change this to the right value!
-  serialPort = new Serial(this, Serial.list()[0], 9600);
+  serialPort = new Serial(this, Serial.list()[1], 9600);
   // Only send out event when a line break is reached.
   serialPort.bufferUntil('\n');
 
-  size(400, 400);
+  size(800, 800);
 
   // Basic background drawing
   translate(20, 40);
   strokeWeight(4);
-  scale(4);
+  scale(8);
   stroke(0, 0, 0);
   line(50, 35, 50, 50);
 }
@@ -31,7 +31,7 @@ void setup()
 void draw()
 {
   translate(20, 40);
-  scale(4);
+  scale(8);
   // Head
   fill(head_accSensor_x, head_accSensor_y, 0);
   ellipse(50, 10, 20, 20);
@@ -61,10 +61,10 @@ void serialEvent(Serial myPort)
   // Make sure all the values are available
   if (vals.length >= 5) {
     // Adjust these later to make them have a larger range
-    candy_forceSensor = map(vals[0], 0, 1023, 0, 255);
-    elbow_bendSensor  = map(vals[1], 0, 1023, 0, 255);
-    neck_bendSensor   = map(vals[2], 0, 1023, 0, 255);
-    head_accSensor_x  = map(vals[3], 0, 1023, 0, 255);
-    head_accSensor_y  = map(vals[4], 0, 1023, 0, 255);
+    candy_forceSensor = int(map(vals[1], 0, 1023, 0, 255));
+    elbow_bendSensor  = int(map(vals[2], 300, 500, 0, 255));
+    neck_bendSensor   = int(map(vals[0], 500, 300, 0, 255));
+    head_accSensor_x  = int(map(vals[3], 0, 1023, 0, 255));
+    head_accSensor_y  = int(map(vals[4], 0, 1023, 0, 255));
   }
 }
