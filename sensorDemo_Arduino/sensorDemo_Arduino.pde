@@ -1,10 +1,10 @@
 // Input pin ports for each sensor
-const int candy_forcePin  = A0;
-const int tongue_forcePin = A1;
-const int neck_bendPin    = A2;
-const int body_acc_zPin   = A3;
-const int body_acc_yPin   = A4;
-const int body_acc_xPin   = A5;
+const int body_acc_zPin   = A0;
+const int body_acc_yPin   = A1;
+const int body_acc_xPin   = A2;
+const int candy_forcePin  = A3;
+const int tongue_forcePin = A4;
+const int neck_bendPin    = A5;
 
 void setup()
 {
