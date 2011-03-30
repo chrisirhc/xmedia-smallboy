@@ -1,5 +1,6 @@
 import processing.serial.*;
 
+final int NUMBER_OF_VALUES = 5;
 // Initialize sensor values
 int candy_forceSensor = 255;
 int elbow_bendSensor  = 255;
@@ -59,7 +60,7 @@ void serialEvent(Serial myPort)
   // Convert the values into floats from strings after splitting the string
   float[] vals = float(split(inString, ","));
   // Make sure all the values are available
-  if (vals.length >= 5) {
+  if (vals.length >= NUMBER_OF_VALUES) {
     // Adjust these later to make them have a larger range
     candy_forceSensor = int(map(vals[1], 0, 1023, 0, 255));
     elbow_bendSensor  = int(map(vals[2], 300, 500, 0, 255));
