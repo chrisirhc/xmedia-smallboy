@@ -3,7 +3,6 @@ import processing.serial.*;
 final int NUMBER_OF_VALUES = 5;
 // Initialize sensor values
 int candy_forceSensor = 255;
-int elbow_bendSensor  = 255;
 int neck_bendSensor   = 255;
 int head_accSensor_x  = 255;
 int head_accSensor_y  = 255;
@@ -44,7 +43,7 @@ void draw()
   fill(0, 0, 0);
   ellipse(20, 20, 20, 20);
   line(20, 30, 25, 60);
-  stroke(elbow_bendSensor, 0, 0);
+  stroke(0, 0, 0);
   // Left Arm (only arm with candy)
   line(50, 35, 25, 60);
   // Legs
@@ -63,7 +62,6 @@ void serialEvent(Serial myPort)
   if (vals.length >= NUMBER_OF_VALUES) {
     // Adjust these later to make them have a larger range
     candy_forceSensor = int(map(vals[1], 0, 1023, 0, 255));
-    elbow_bendSensor  = int(map(vals[2], 300, 500, 0, 255));
     neck_bendSensor   = int(map(vals[0], 500, 300, 0, 255));
     head_accSensor_x  = int(map(vals[3], 0, 1023, 0, 255));
     head_accSensor_y  = int(map(vals[4], 0, 1023, 0, 255));
