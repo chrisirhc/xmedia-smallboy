@@ -1,4 +1,8 @@
 import processing.serial.*;
+import oscP5.*;
+import netP5.*;
+OscP5 oscP5;
+NetAddress myRemoteLocation;
 
 final int NUMBER_OF_VALUES = 5;
 // Initialize sensor values
@@ -12,6 +16,9 @@ Serial serialPort;
 
 void setup()
 {
+  oscP5 = new OscP5(this, 12000);
+  myRemoteLocation = new NetAddress("127.0.0.1", 32000);
+
   // Print for debugging purposes
   println(Serial.list());
   // Change this to the right value!
@@ -19,7 +26,8 @@ void setup()
   // Only send out event when a line break is reached.
   serialPort.bufferUntil('\n');
 
-  size(800, 800);
+  size(100, 100);
+  // size(800, 800);
 
   // Basic background drawing
   translate(20, 40);
@@ -65,11 +73,18 @@ void serialEvent(Serial myPort)
   float[] vals = float(split(inString, ","));
   // Make sure all the values are available
   if (vals.length >= NUMBER_OF_VALUES) {
+    OscMessage msg = new OscMessage("/boy");
     // Adjust these later to make them have a larger range
-    tongue_forceSensor = int(map(vals[0], 0, 1023, 0, 255));
-    candy_forceSensor  = int(map(vals[1], 0, 1023, 0, 255));
+    tongue_forceSensor = int(map(vals[1], 0, 1023, 0, 255));
+    candy_forceSensor  = int(map(vals[0], 0, 1023, 0, 255));
     neck_bendSensor    = int(map(vals[2], 500, 300, 0, 255));
     body_accSensor_x   = int(map(vals[3], 0, 1023, 0, 255));
     body_accSensor_y   = int(map(vals[4], 0, 1023, 0, 255));
+    msg.add(tongue_forceSensor);
+    msg.add(candy_forceSensor);
+    msg.add(neck_bendSensor);
+    msg.add(body_accSensor_x);
+    msg.add(body_accSensor_y);
+    oscP5.send(msg, myRemoteLocation);
   }
 }
