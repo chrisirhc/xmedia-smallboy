@@ -9,8 +9,8 @@ const int tongue_forcePin = A4;
 const int candy_forcePin  = A5;
 
 // Setup SoftwareSerial for XBee component
-#define rxPin 3
-#define txPin 2
+#define rxPin 2
+#define txPin 3
 SoftwareSerial xbeeSerial(rxPin, txPin);
 
 void setup()
