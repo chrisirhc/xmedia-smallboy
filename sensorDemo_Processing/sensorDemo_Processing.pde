@@ -46,6 +46,8 @@ void setup()
 
 void draw()
 {
+  // Write to receive the updated data
+  serialPort.write('B');
   translate(20, 40);
   scale(8);
 
