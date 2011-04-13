@@ -41,6 +41,18 @@ void loop()
         break;
       }
     }
+  }
+  if (!sendNow && Serial.available() > 0) {
+    while(Serial.available() > 0) {
+      // Search for the B character
+      addressChar = char(Serial.read());
+      if (addressChar == 'B') {
+        sendNow = true;
+        // Break when it's found
+        break;
+      }
+    }
+  }
     if (sendNow) {
       // Print each analog input
       Serial.print(analogRead(tongue_forcePin));
@@ -69,5 +81,4 @@ void loop()
       xbeeSerial.print(",");
       xbeeSerial.println(analogRead(body_acc_zPin));
     }
-  }
 }
