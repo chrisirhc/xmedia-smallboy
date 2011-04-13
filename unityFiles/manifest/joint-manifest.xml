@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<joints root="spine/">
+  <section name="Head" joint_id="neck" freeze="true">
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>4</puppet_index>
+      <msg_index>4</msg_index>
+      <model>
+        <rest>0.1332365</rest>
+        <max>-35.33179</max>
+        <min>39.46593</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>-35</max>
+        <min>35</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <puppet_index>0</puppet_index>
+      <msg_index>0</msg_index>
+      <model>
+        <rest>0.05751702</rest>
+        <max>-35.33179</max>
+        <min>39.46593</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="LeftShoulder" joint_id="leftShoulder">
+    <joint debug="true">
+
+      <axis>x</axis>
+      <puppet_index>1</puppet_index>
+      <msg_index>1</msg_index>
+      <model>
+        <rest>353.0497</rest>
+        <min>312.6038</min>
+        <max>406.8797</max>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>2</puppet_index>
+      <msg_index>2</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <puppet_index>3</puppet_index>
+      <msg_index>3</msg_index>
+      <model>
+        <rest>365.7076</rest>
+        <max>524.6738</max>
+        <min>262.8482</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="LeftElbow" parent="LeftShoulder" joint_id="leftShoulder/leftElbow">
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>164.7399</max>
+        <min>0</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="RightShoulder" joint_id="rightShoulder">
+
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>350.5638</rest>
+        <min>467.1339</min>
+        <max>265.5014</max>
+      </model>
+
+    </joint>
+
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <puppet_index>5</puppet_index>
+      <msg_index>5</msg_index>
+      <model>
+        <rest>5.5638</rest>
+        <max>-100.6998</max>
+        <min>103.9722</min>
+      </model>
+
+    </joint>
+
+
+
+  </section>
+
+  <section name="RightElbow" parent="RightShoulder" joint_id="rightShoulder/rightElbow">
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>-173.9111</max>
+        <min>0</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="Hip" joint_id="gut/torso" scale="0" freeze="true">
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>55.03856</max>
+        <min>-49.38787</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>-26.63612</max>
+        <min>42.45569</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="LeftLeg" parent="Hip" joint_id="gut/torso/leftHip">
+    <joint>
+
+      <axis>x</axis>
+      <!--<puppet_index>11</puppet_index>
+      <msg_index>19</msg_index>-->
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>358.0672</rest>
+        <max>323.2646</max>
+        <min>393.5999</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <!--<puppet_index>10</puppet_index>
+      <msg_index>18</msg_index>-->
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>183.7548</rest>
+        <max>73.9791</max>
+        <min>334.9814</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="LeftKnee" parent="LeftLeg" joint_id="gut/torso/leftHip/leftKnee" scale="-1">
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <!--<puppet_index>12</puppet_index>
+      <msg_index>22</msg_index>-->
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>174.6879</rest>
+        <max>120.1009</max>
+        <min>20.4316</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="RightLeg" parent="Hip" joint_id="gut/torso/rightHip">
+    <joint>
+
+      <axis>x</axis>
+      <!--<puppet_index>14</puppet_index>
+      <msg_index>25</msg_index>-->
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>24.17812</max>
+        <min>-41.49667</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <!--<puppet_index>13</puppet_index>
+      <msg_index>24</msg_index>-->
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>0</rest>
+        <max>46.83515</max>
+        <min>-71.43473</min>
+      </model>
+
+    </joint>
+  </section>
+
+  <section name="RightKnee" parent="RightLeg" joint_id="gut/torso/rightHip/rightKnee">
+    <joint>
+
+      <axis>x</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>y</axis>
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+      <model>
+        <rest>1</rest>
+        <max>1</max>
+        <min>1</min>
+      </model>
+
+    </joint>
+
+    <joint>
+
+      <axis>z</axis>
+      <!--<puppet_index>15</puppet_index>
+      <msg_index>28</msg_index>-->
+      <puppet_index>null</puppet_index>
+      <msg_index>null</msg_index>
+
+      <model>
+        <rest>157.3344</rest>
+        <max>-27.6495</max>
+        <min>-127.09395</min>
+      </model>
+
+    </joint>
+  </section>
+
+</joints>

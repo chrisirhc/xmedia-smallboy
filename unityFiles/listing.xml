@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bdc>
+	<puppets>
+
+		<puppet id="/boy">
+			<calibration src="smallboy-new" />
+		</puppet>
+
+		
+
+	</puppets>
+
+	<models>
+
+
+		
+
+		<model id="PuppetBodyPlay">
+			<manifest src="joint-manifest" />
+		</model>
+		
+		<model id="PuppetBodyPlayback">
+			<manifest src="joint-manifest-safe" />
+		</model>
+		
+		<model id="PuppetBodyPlayback2">
+			<manifest src="joint-manifest" />
+		</model>
+
+	</models>
+</bdc>
