@@ -6,12 +6,12 @@ NetAddress myRemoteLocation;
 
 final int NUMBER_OF_VALUES = 5;
 // Initialize sensor values
-int candy_forceSensor  = 100;
-int tongue_forceSensor = 100;
-int neck_bendSensor    = 100;
-int body_accSensor_x   = 100;
-int body_accSensor_y   = 100;
-int body_accSensor_z   = 100;
+int candy_forceSensor  = 360;
+int tongue_forceSensor = 360;
+int neck_bendSensor    = 360;
+int body_accSensor_x   = 360;
+int body_accSensor_y   = 360;
+int body_accSensor_z   = 360;
 int tongue_color = 255;
 int candy_color = 255;
 int neck_color  = 255;
@@ -84,12 +84,12 @@ void serialEvent(Serial myPort)
   if (vals.length >= NUMBER_OF_VALUES) {
     OscMessage msg = new OscMessage("/boy");
     // Adjust these later to make them have a larger range
-    tongue_forceSensor = int(map(vals[0], 0, 1023, 0, 100));
-    candy_forceSensor  = int(map(vals[1], 0, 1023, 0, 100));
-    neck_bendSensor    = int(map(vals[2], 250, 100, 0, 100));
-    body_accSensor_x   = int(map(vals[3], 0, 1023, 0, 100));
-    body_accSensor_y   = int(map(vals[4], 0, 1023, 0, 100));
-    body_accSensor_z   = int(map(vals[5], 0, 1023, 0, 100));
+    tongue_forceSensor = int(map(vals[0], 0, 1023, 0, 360));
+    candy_forceSensor  = int(map(vals[1], 0, 1023, 0, 360));
+    neck_bendSensor    = int(map(vals[2], 250, 100, 0, 360));
+    body_accSensor_x   = int(map(vals[3], 0, 1023, 0, 360));
+    body_accSensor_y   = int(map(vals[4], 0, 1023, 0, 360));
+    body_accSensor_z   = int(map(vals[5], 0, 1023, 0, 360));
 
     tongue_color  = int(map(vals[0], 0, 1023, 0, 255));
     candy_color   = int(map(vals[1], 0, 1023, 0, 255));
